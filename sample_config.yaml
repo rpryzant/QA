@@ -1,0 +1,10 @@
+
+num_experiments: 5
+random_seed: 50
+
+working_dir_base: 'test_dir'
+
+param1: [1,2,3]
+param2: !!python/tuple [0,50]
+param3: 6
+
