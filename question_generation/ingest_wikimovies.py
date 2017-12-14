@@ -2,7 +2,7 @@
 converts wikimovies-formatted data into structured
 JSON for question generation
 
-python ingest_wikimovies.py ../raw_data/movieqa/knowledge_source/wiki_entities/wiki_entities_kb.txt > wikimovies.json
+python ingest_wikimovies.py ../raw_data/movieqa/knowledge_source/wiki_entities/wiki_entities_kb.txt wikimovies.json
 """
 import sys
 from collections import defaultdict
