@@ -32,17 +32,23 @@ def parse_kb_entry(kb_entry_str):
 
 if __name__ == '__main__':
     out = {
-        'films': []
         # metadata?
+        "dbs": [
+            {
+                "films": []
+            }
+        ]
     }
     print 'Parsing raw kb...'
     start = time.time()
     with open(sys.argv[1]) as kb:
-        for kb_entry_str in kb.read().split('\n\n'):
+        for i, kb_entry_str in enumerate(kb.read().split('\n\n')):
             kb_entry = parse_kb_entry(kb_entry_str)
             if kb_entry:
-                out['films'].append(kb_entry)
-    print 'Done. Took %.2fs, found %d entries' % (time.time() - start, len(out['films']))
+                out['dbs'][0]['films'].append(kb_entry)
+            if i > 40: 
+                break
+    print 'Done. Took %.2fs, found %d entries' % (time.time() - start, len(out['dbs'][0]['films']))
     
     print 'Writing to %s' % sys.argv[2]
     with open(sys.argv[2], 'w') as outfile:

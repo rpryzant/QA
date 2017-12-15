@@ -45,19 +45,19 @@ us to efficiently prune the search space and terminate early when we know that
 parser = argparse.ArgumentParser()
 
 # Inputs
-parser.add_argument('--input_scene_file', default='../output/CLEVR_scenes.json',
-    help="JSON file containing ground-truth scene information for all images " +
+parser.add_argument('--input_scene_file', default='wikimovies.json',
+    help="JSON file containing ground-truth scene information for all films " +
          "from render_images.py")
 parser.add_argument('--metadata_file', default='metadata.json',
     help="JSON file containing metadata about functions")
 parser.add_argument('--synonyms_json', default='synonyms.json',
     help="JSON file defining synonyms for parameter values")
-parser.add_argument('--template_dir', default='CLEVR_1.0_templates',
+parser.add_argument('--template_dir', default='question_templates',
     help="Directory containing JSON templates for questions")
 
 # Output
 parser.add_argument('--output_questions_file',
-    default='../output/CLEVR_questions.json',
+    default='questions.json',
     help="The output file to write containing generated questions")
 
 # Control which and how many images to process
@@ -74,7 +74,7 @@ parser.add_argument('--num_scenes', default=0, type=int,
 parser.add_argument('--templates_per_image', default=10, type=int,
     help="The number of different templates that should be instantiated " +
          "on each image")
-parser.add_argument('--instances_per_template', default=1, type=int,
+parser.add_argument('--instances_per_template', default=5, type=int,
     help="The number of times each template should be instantiated on an image")
 
 # Misc
@@ -96,10 +96,18 @@ def precompute_filter_options(scene_struct, metadata):
   # and values are lists of object idxs that match the filter criterion
   attribute_map = {}
 
-  if metadata['dataset'] == 'CLEVR-v1.0':
-    attr_keys = ['size', 'color', 'material', 'shape']
-  else:
-    assert False, 'Unrecognized dataset'
+  #!! NOTE -- must match ordering of 'params' fields in question template jsons
+  attr_keys = [
+    'title',
+    'release_year',
+    'in_language',
+    'has_imdb_votes',
+    'has_imdb_rating',
+    'has_genre',
+    'starred_actors',
+    'written_by',
+    'directed_by'
+  ]
 
   # Precompute masks
   masks = []
@@ -109,16 +117,17 @@ def precompute_filter_options(scene_struct, metadata):
       mask.append((i // (2 ** j)) % 2)
     masks.append(mask)
 
-  for object_idx, obj in enumerate(scene_struct['objects']):
-    if metadata['dataset'] == 'CLEVR-v1.0':
-      keys = [tuple(obj[k] for k in attr_keys)]
+  for object_idx, obj in enumerate(scene_struct['films']):
+    # if metadata['dataset'] == 'CLEVR-v1.0':
+    # TODO -- handle missing attibutes gracefully?
+    keys = [tuple(obj.get(k, ['MISSING']) for k in attr_keys)]
 
     for mask in masks:
       for key in keys:
         masked_key = []
         for a, b in zip(key, mask):
           if b == 1:
-            masked_key.append(a)
+            masked_key.append(a[0]) # TODO -- handle list attributes the right way!!!!! (how?)
           else:
             masked_key.append(None)
         masked_key = tuple(masked_key)
@@ -146,12 +155,22 @@ def find_filter_options(object_idxs, scene_struct, metadata):
 def add_empty_filter_options(attribute_map, metadata, num_to_add):
   # Add some filtering criterion that do NOT correspond to objects
 
-  if metadata['dataset'] == 'CLEVR-v1.0':
-    attr_keys = ['Size', 'Color', 'Material', 'Shape']
-  else:
-    assert False, 'Unrecognized dataset'
+  #!! NOTE -- must match ordering of 'params' fields in question template jsons
+  attr_keys = [
+    'title',
+    'release_year',
+    'in_language',
+    'has_imdb_votes',
+    'has_imdb_rating',
+    'has_genre',
+    'starred_actors',
+    'written_by',
+    'directed_by'
+  ]
+
   
-  attr_vals = [metadata['types'][t] + [None] for t in attr_keys]
+  # TODO -- gracefully skip missing attributes?
+  attr_vals = [metadata['types'].get(t, []) + [None] for t in attr_keys]
   if '_filter_options' in metadata:
     attr_vals = metadata['_filter_options']
 
@@ -533,8 +552,8 @@ def main(args):
   with open(args.metadata_file, 'r') as f:
     metadata = json.load(f)
     dataset = metadata['dataset']
-    if dataset != 'CLEVR-v1.0':
-      raise ValueError('Unrecognized dataset "%s"' % dataset)
+    # if dataset != 'CLEVR-v1.0':
+    #   raise ValueError('Unrecognized dataset "%s"' % dataset)
   
   functions_by_name = {}
   for f in metadata['functions']:
@@ -584,8 +603,8 @@ def main(args):
   all_scenes = []
   with open(args.input_scene_file, 'r') as f:
     scene_data = json.load(f)
-    all_scenes = scene_data['scenes']
-    scene_info = scene_data['info']
+    all_scenes = scene_data['dbs'] # TODO - scenactors, films, etc?
+    # scene_info = scene_data['info']
   begin = args.scene_start_idx
   if args.num_scenes > 0:
     end = args.scene_start_idx + args.num_scenes
@@ -600,10 +619,10 @@ def main(args):
   questions = []
   scene_count = 0
   for i, scene in enumerate(all_scenes):
-    scene_fn = scene['image_filename']
+    # scene_fn = scene['image_filename']
     scene_struct = scene
-    print('starting image %s (%d / %d)'
-          % (scene_fn, i + 1, len(all_scenes)))
+    print('starting image (%d / %d)'
+          % (i + 1, len(all_scenes)))
 
     if scene_count % args.reset_counts_every == 0:
       print('resetting counts')
@@ -633,13 +652,13 @@ def main(args):
       if args.time_dfs and args.verbose:
         toc = time.time()
         print('that took ', toc - tic)
-      image_index = int(os.path.splitext(scene_fn)[0].split('_')[-1])
+      # image_index = int(os.path.splitext(scene_fn)[0].split('_')[-1])
       for t, q, a in zip(ts, qs, ans):
         questions.append({
-          'split': scene_info['split'],
-          'image_filename': scene_fn,
-          'image_index': image_index,
-          'image': os.path.splitext(scene_fn)[0],
+          # 'split': scene_info['split'],
+          # 'image_filename': scene_fn,
+          # 'image_index': image_index,
+          # 'image': os.path.splitext(scene_fn)[0],
           'question': t,
           'program': q,
           'answer': a,
@@ -680,7 +699,7 @@ def main(args):
   with open(args.output_questions_file, 'w') as f:
     print('Writing output to %s' % args.output_questions_file)
     json.dump({
-        'info': scene_info,
+        # 'info': scene_info,
         'questions': questions,
       }, f)
 

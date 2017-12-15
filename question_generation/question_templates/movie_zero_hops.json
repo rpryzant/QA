@@ -1,0 +1,73 @@
+[
+  {
+    "text": [
+      "Are there any films with language <L>  and genre <G>?"
+    ],
+    "nodes": [
+      {
+        "inputs": [
+          
+        ],
+        "type": "db"
+      },
+      {
+        "side_inputs": [
+          "<T>",
+          "<Y>",
+          "<L>",
+          "<V>",
+          "<R>",
+          "<G>",
+          "<A>",
+          "<W>",
+          "<D>"
+        ],
+        "inputs": [
+          0
+        ],
+        "type": "filter_exist"
+      }
+    ],
+    "params": [
+      {
+        "type": "title",
+        "name": "<T>"
+      },
+      {
+        "type": "release_year",
+        "name": "<Y>"
+      },
+      {
+        "type": "in_language",
+        "name": "<L>"
+      },
+      {
+        "type": "has_imdb_votes",
+        "name": "<V>"
+      },
+      {
+        "type": "has_imdb_rating",
+        "name": "<R>"
+      },
+      {
+        "type": "has_genre",
+        "name": "<G>"
+      },
+      {
+        "type": "starred_actors",
+        "name": "<A>"
+      },
+      {
+        "type": "written_by",
+        "name": "<W>"
+      },
+      {
+        "type": "directed_by",
+        "name": "<D>"
+      }
+    ],
+    "constraints": [
+      
+    ]
+  }
+]
