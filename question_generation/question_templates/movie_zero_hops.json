@@ -28,6 +28,20 @@
         "type": "filter_exist"
       }
     ],
+    "constraints": [
+        {
+            "params": [
+                "<L>"
+            ],
+            "type": "NOT_NULL"
+        },
+        {
+            "params": [
+                "<G>"
+            ],
+            "type": "NOT_NULL"
+        }
+    ],
     "params": [
       {
         "type": "title",
@@ -65,9 +79,6 @@
         "type": "directed_by",
         "name": "<D>"
       }
-    ],
-    "constraints": [
-      
     ]
   }
 ]

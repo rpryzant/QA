@@ -34,7 +34,8 @@ def make_filter_handler(attribute):
     value = side_inputs[0]
     output = []
     for idx in inputs[0]:
-      atr = scene_struct['objects'][idx][attribute]
+      # TODO - handle missing attributes well
+      atr = scene_struct['films'][idx].get(attribute, 'MISSING')
       if value == atr or value in atr:
         output.append(idx)
     return output
@@ -150,16 +151,17 @@ def greater_than_handler(scene_struct, inputs, side_inputs):
 # care of registration? Not sure. Also what if we want to reuse the same engine
 # for different sets of node types?
 execute_handlers = {
-  'db': db_handler
+  'db': db_handler,
 
-  'filter_year': make_filter_handler('release_year'),
-  'filter_language': make_filter_handler('in_language'),
-  'filter_votes': make_filter_handler('has_imdb_votes'),
-  'filter_rating': make_filter_handler('has_imdb_rating'),
-  'filter_genre': make_filter_handler('has_genre'),
-  'filter_actor': make_filter_handler('starred_actors'),
-  'filter_writer': make_filter_handler('written_by'),
-  'filter_director': make_filter_handler('directed_by'),
+  'filter_release_year': make_filter_handler('release_year'), 
+  'filter_in_language': make_filter_handler('in_language'),
+  'filter_has_imdb_votes': make_filter_handler('has_imdb_votes'),
+  'filter_has_imdb_rating': make_filter_handler('has_imdb_rating'),
+  'filter_has_genre': make_filter_handler('has_genre'),
+  'filter_starred_actors': make_filter_handler('starred_actors'),
+  'filter_written_by': make_filter_handler('written_by'),
+  'filter_directed_by': make_filter_handler('directed_by'),
+  'filter_title': make_filter_handler('title'),
 
   'unique': unique_handler,
 #  'relate': relate_handler,   -- TODO -- preload json with relations
@@ -168,39 +170,42 @@ execute_handlers = {
   'intersect': intersect_handler,
   'count': count_handler,
 
-  'query_year': make_query_handler('release_year'),  # TODO -- is this an integer or release_year? switch release_year to ints?
-  'query_language': make_query_handler('in_language'),
-  'query_votes': make_query_handler('has_imdb_votes'),
-  'query_rating': make_query_handler('has_imdb_rating'),
-  'query_genre': make_query_handler('has_genre'),
-  'query_actor': make_query_handler('starred_actors'),
-  'query_writer': make_query_handler('written_by'),
-  'query_director': make_query_handler('directed_by'),
+  'query_release_year': make_query_handler('release_year'),  # TODO -- is this an integer or release_year? switch release_year to ints?
+  'query_in_language': make_query_handler('in_language'),
+  'query_has_imdb_votes': make_query_handler('has_imdb_votes'),
+  'query_has_imdb_rating': make_query_handler('has_imdb_rating'),
+  'query_has_genre': make_query_handler('has_genre'),
+  'query_starred_actors': make_query_handler('starred_actors'),
+  'query_written_by': make_query_handler('written_by'),
+  'query_directed_by': make_query_handler('directed_by'),
+  'query_title': make_query_handler('title'),
 
   'exist': exist_handler,
 
   # TODO -- handle list equality, etc
-  'equal_year': equal_handler,  
-  'equal_language': equal_handler,
-  'equal_votes': equal_handler,
-  'equal_rating': equal_handler,
-  'equal_genre': equal_handler,
-  'equal_actor': equal_handler,
-  'equal_writer': equal_handler,
-  'equal_director': equal_handler,
+  'equal_release_year': equal_handler,  
+  'equal_in_language': equal_handler,
+  'equal_has_imdb_votes': equal_handler,
+  'equal_has_imdb_rating': equal_handler,
+  'equal_has_genre': equal_handler,
+  'equal_starred_actors': equal_handler,
+  'equal_written_by': equal_handler,
+  'equal_directed_by': equal_handler,
   'equal_film': equal_handler,
+  'equal_title': equal_handler,
 
   'less_than': less_than_handler,
   'greater_than': greater_than_handler,
 
-  'same_year': make_same_attr_handler('release_year'),  # TODO -- is this an integer or release_year? switch release_year to ints?
-  'same_language': make_same_attr_handler('in_language'),
-  'same_votes': make_same_attr_handler('has_imdb_votes'),
-  'same_rating': make_same_attr_handler('has_imdb_rating'),
-  'same_genre': make_same_attr_handler('has_genre'),
-  'same_actor': make_same_attr_handler('starred_actors'),
-  'same_writer': make_same_attr_handler('written_by'),
-  'same_director': make_same_attr_handler('directed_by')
+  'same_release_year': make_same_attr_handler('release_year'),  # TODO -- is this an integer or release_year? switch release_year to ints?
+  'same_in_language': make_same_attr_handler('in_language'),
+  'same_has_imdb_votes': make_same_attr_handler('has_imdb_votes'),
+  'same_has_imdb_rating': make_same_attr_handler('has_imdb_rating'),
+  'same_has_genre': make_same_attr_handler('has_genre'),
+  'same_starred_actors': make_same_attr_handler('starred_actors'),
+  'same_written_by': make_same_attr_handler('written_by'),
+  'same_directed_by': make_same_attr_handler('directed_by'),
+  'same_title': make_same_attr_handler('title')
 }
 
 

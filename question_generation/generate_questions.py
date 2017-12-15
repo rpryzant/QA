@@ -121,7 +121,6 @@ def precompute_filter_options(scene_struct, metadata):
     # if metadata['dataset'] == 'CLEVR-v1.0':
     # TODO -- handle missing attibutes gracefully?
     keys = [tuple(obj.get(k, ['MISSING']) for k in attr_keys)]
-
     for mask in masks:
       for key in keys:
         masked_key = []
@@ -273,7 +272,6 @@ def instantiate_templates_dfs(scene_struct, template, metadata, answer_counts,
   final_states = []
   while states:
     state = states.pop()
-
     # Check to make sure the current state is valid
     q = {'nodes': state['nodes']}
     outputs = qeng.answer_question(q, metadata, scene_struct, all_outputs=True)
@@ -299,8 +297,22 @@ def instantiate_templates_dfs(scene_struct, template, metadata, answer_counts,
         v = state['vals'].get(p)
         if v is not None:
           skip = False
-          if p_type == 'Shape' and v != 'thing': skip = True
-          if p_type != 'Shape' and v != '': skip = True
+          # if p_type == 'Shape' and v != 'thing': skip = True
+          if v != '': skip = True
+          if skip:
+            if verbose:
+              print('skipping due to NULL constraint')
+              print(constraint)
+              print(state['vals'])
+            skip_state = True
+            break
+      elif constraint['type'] == 'NOT_NULL':
+        p = constraint['params'][0]
+        p_type = param_name_to_type[p]
+        v = state['vals'].get(p)
+        if v is not None:
+          skip = False
+          if v == '': skip = True
           if skip:
             if verbose:
               print('skipping due to NULL constraint')
@@ -427,10 +439,10 @@ def instantiate_templates_dfs(scene_struct, template, metadata, answer_counts,
             cur_next_vals[param_name] = param_val
             next_input = len(state['nodes']) + len(new_nodes) - 1
           elif param_val is None:
-            if metadata['dataset'] == 'CLEVR-v1.0' and param_type == 'Shape':
-              param_val = 'thing'
-            else:
-              param_val = ''
+            # if metadata['dataset'] == 'CLEVR-v1.0' and param_type == 'Shape':
+            #   param_val = 'thing'
+            # else:
+            param_val = ''
             cur_next_vals[param_name] = param_val
         input_map = {k: v for k, v in state['input_map'].items()}
         extra_type = None
@@ -512,6 +524,7 @@ def instantiate_templates_dfs(scene_struct, template, metadata, answer_counts,
     text = ' '.join(text.split())
     text = other_heuristic(text, state['vals'])
     text_questions.append(text)
+    print(text)
 
   return text_questions, structured_questions, answers
 
