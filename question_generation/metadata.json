@@ -190,6 +190,27 @@
             "terminal": true
         },
 
+
+        {
+          "name": "equal_integer",
+          "inputs": ["Integer", "Integer"],
+          "output": "Bool",
+          "terminal": true
+        },
+        {
+          "name": "less_than",
+          "inputs": ["Integer", "Integer"],
+          "output": "Bool",
+          "terminal": true
+        },
+        {
+          "name": "greater_than",
+          "inputs": ["Integer", "Integer"],
+          "output": "Bool",
+          "terminal": true
+        },
+
+
         {
             "name": "equal_release_year",
             "inputs": ["release_year", "release_year"],

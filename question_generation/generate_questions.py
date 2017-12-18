@@ -12,6 +12,11 @@ import re
 
 import question_engine as qeng
 
+import sys
+reload(sys)
+sys.setdefaultencoding('UTF8')
+
+
 """
 Generate synthetic questions and answers for CLEVR images. Input is a single
 JSON file containing ground-truth scene information for all images, and output
@@ -71,7 +76,7 @@ parser.add_argument('--num_scenes', default=0, type=int,
 
 # Control the number of questions per image; we will attempt to generate
 # templates_per_image * instances_per_template questions per image.
-parser.add_argument('--templates_per_image', default=10, type=int,
+parser.add_argument('--templates_per_image', default=50, type=int,
     help="The number of different templates that should be instantiated " +
          "on each image")
 parser.add_argument('--instances_per_template', default=5, type=int,
@@ -270,7 +275,14 @@ def instantiate_templates_dfs(scene_struct, template, metadata, answer_counts,
   }
   states = [initial_state]
   final_states = []
+  idxx = 0
   while states:
+    # TODO -- speed things up for real instead of this hack
+    idxx += 1
+    if idxx > 100000 and len(final_states) > 0:
+      break
+
+
     state = states.pop()
     # Check to make sure the current state is valid
     q = {'nodes': state['nodes']}
@@ -518,7 +530,7 @@ def instantiate_templates_dfs(scene_struct, template, metadata, answer_counts,
     for name, val in state['vals'].items():
       if val in synonyms:
         val = random.choice(synonyms[val])
-      text = text.replace(name, val)
+      text = text.replace(name, str(val).decode('utf-8'))  #TODO -- str in case int
       text = ' '.join(text.split())
     text = replace_optionals(text)
     text = ' '.join(text.split())
@@ -603,8 +615,9 @@ def main(args):
       if final_dtype == 'Bool':
         answers = [True, False]
       if final_dtype == 'Integer':
-        if metadata['dataset'] == 'CLEVR-v1.0':
-          answers = list(range(0, 11))
+        # if metadata['dataset'] == 'CLEVR-v1.0':
+        # TODO -- find answer range - corresponds to year?
+        answers = list(range(0, 3000))
       template_answer_counts[key[:2]] = {}
       for a in answers:
         template_answer_counts[key[:2]][a] = 0

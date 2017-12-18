@@ -1,0 +1,61 @@
+[
+    {
+        "constraints": [
+            {
+                "params": [
+                    1,
+                    3
+                ],
+                "type": "OUT_NEQ"
+            }
+        ],
+        "nodes": [
+            {
+                "inputs": [],
+                "type": "db"
+            },
+            {
+                "inputs": [
+                    0
+                ],
+                "side_inputs": [
+                    "<G>"
+                ],
+                "type": "filter_count"
+            },
+            {
+                "inputs": [],
+                "type": "db"
+            },
+            {
+                "inputs": [
+                    2
+                ],
+                "side_inputs": [
+                    "<G2>"
+                ],
+                "type": "filter_count"
+            },
+            {
+                "inputs": [
+                    1,
+                    3
+                ],
+                "type": "equal_integer"
+            }
+        ],
+        "params": [
+            {
+              "type": "has_genre",
+              "name": "<G>"
+            },
+            {
+              "type": "has_genre",
+              "name": "<G2>"
+            }
+        ],
+        "text": [
+            "Are there an equal number of <G> and <G2> movies?"
+        ]
+    }
+]

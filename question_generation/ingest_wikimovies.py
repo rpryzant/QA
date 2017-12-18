@@ -16,13 +16,19 @@ def parse_kb_entry(kb_entry_str):
     out = {}
     for l in kb_entry_str.split('\n'):
         parts = l.strip().split()
-        i, relation = next((i, x) for i, x in enumerate(parts) if '_' in x)
+        i, attr = next((i, x) for i, x in enumerate(parts) if '_' in x)
         title = ' '.join(parts[1:i])
         values =  ' '.join(parts[i+1:]).split(', ')
 
         # skip plot summary -- TODO -- keep this?
-        if relation != 'has_plot':
-            out[relation] = values
+        if attr == 'has_plot':
+            continue
+        elif attr == 'release_year':
+            out[attr] = map(lambda x: int(x), values)
+        else:
+            out[attr] = values
+
+
     out['title'] = [title]
 
     return out

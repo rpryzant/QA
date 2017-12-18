@@ -35,7 +35,7 @@ def make_filter_handler(attribute):
     output = []
     for idx in inputs[0]:
       # TODO - handle missing attributes well
-      atr = scene_struct['films'][idx].get(attribute, 'MISSING')
+      atr = scene_struct['films'][idx].get(attribute, ['MISSING'])
       if value == atr or value in atr:
         output.append(idx)
     return output
@@ -90,9 +90,9 @@ def make_same_attr_handler(attribute):
     cache_key = '_same_%s' % attribute
     if cache_key not in scene_struct:
       cache = {}
-      for i, obj1 in enumerate(scene_struct['objects']):
+      for i, obj1 in enumerate(scene_struct['films']):
         same = []
-        for j, obj2 in enumerate(scene_struct['objects']):
+        for j, obj2 in enumerate(scene_struct['films']):
           if i != j and obj1[attribute] == obj2[attribute]:
             same.append(j)
         cache[i] = same
@@ -110,9 +110,10 @@ def make_query_handler(attribute):
     assert len(inputs) == 1
     assert len(side_inputs) == 0
     idx = inputs[0]
-    obj = scene_struct['objects'][idx]
-    assert attribute in obj
-    val = obj[attribute]
+    obj = scene_struct['films'][idx]
+    # assert attribute in obj
+    # TODO -- handle missing values by forcing invalid. do this better?
+    val = obj.get(attribute, [])
     if type(val) == list and len(val) != 1:
       return '__INVALID__'
     elif type(val) == list and len(val) == 1:
@@ -183,6 +184,7 @@ execute_handlers = {
   'exist': exist_handler,
 
   # TODO -- handle list equality, etc
+  'equal_integer': equal_handler,
   'equal_release_year': equal_handler,  
   'equal_in_language': equal_handler,
   'equal_has_imdb_votes': equal_handler,

@@ -1,0 +1,155 @@
+[
+  {
+    "text": [
+      "Were <T> and <T2> released in the same year?"
+    ],
+    "nodes": [
+      {
+        "inputs": [
+        ],
+        "type": "db"
+      },
+      {
+        "side_inputs": [
+          "<T>",
+          "<Y>",
+          "<L>",
+          "<V>",
+          "<R>",
+          "<G>",
+          "<A>",
+          "<W>",
+          "<D>"
+        ],
+        "inputs": [
+          0
+        ],
+        "type": "filter_unique"
+      },
+      {
+        "inputs": [
+        ],
+        "type": "db"
+      },
+      {
+        "side_inputs": [
+          "<T2>",
+          "<Y2>",
+          "<L2>",
+          "<V2>",
+          "<R2>",
+          "<G2>",
+          "<A2>",
+          "<W2>",
+          "<D2>"
+        ],
+        "inputs": [
+          2
+        ],
+        "type": "filter_unique"
+      },
+      {
+          "inputs": [
+              1
+          ],
+          "type": "query_release_year"
+      },
+      {
+          "inputs": [
+              3
+          ],
+          "type": "query_release_year"
+      },
+      {
+          "inputs": [
+              4,
+              5
+          ],
+          "type": "equal_release_year"
+      }
+    ],
+    "constraints": [
+        {
+            "params": [
+                1,
+                3
+            ],
+            "type": "OUT_NEQ"
+        }
+    ],
+    "params": [
+      {
+        "type": "title",
+        "name": "<T>"
+      },
+      {
+        "type": "release_year",
+        "name": "<Y>"
+      },
+      {
+        "type": "in_language",
+        "name": "<L>"
+      },
+      {
+        "type": "has_imdb_votes",
+        "name": "<V>"
+      },
+      {
+        "type": "has_imdb_rating",
+        "name": "<R>"
+      },
+      {
+        "type": "has_genre",
+        "name": "<G>"
+      },
+      {
+        "type": "starred_actors",
+        "name": "<A>"
+      },
+      {
+        "type": "written_by",
+        "name": "<W>"
+      },
+      {
+        "type": "directed_by",
+        "name": "<D>"
+      },
+      {
+        "type": "title",
+        "name": "<T2>"
+      },
+      {
+        "type": "release_year",
+        "name": "<Y2>"
+      },
+      {
+        "type": "in_language",
+        "name": "<L2>"
+      },
+      {
+        "type": "has_imdb_votes",
+        "name": "<V2>"
+      },
+      {
+        "type": "has_imdb_rating",
+        "name": "<R2>"
+      },
+      {
+        "type": "has_genre",
+        "name": "<G2>"
+      },
+      {
+        "type": "starred_actors",
+        "name": "<A2>"
+      },
+      {
+        "type": "written_by",
+        "name": "<W2>"
+      },
+      {
+        "type": "directed_by",
+        "name": "<D2>"
+      }
+    ]
+  } 
+]
