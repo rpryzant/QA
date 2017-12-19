@@ -1,7 +1,7 @@
 TODO
 
 - speedup
-- only need to provide params for things of interest
-    - no need to line up
-- finish counting
+- randomize order
 - relations
+- actor/director/writer/year centric questions? (i think this is done)
+

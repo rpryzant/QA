@@ -306,6 +306,13 @@ def instantiate_templates_dfs(scene_struct, template, metadata, answer_counts,
                             print(state['vals'])
                         skip_state = True
                         break
+            elif constraint['type'] == 'OR_EXIST':
+                p1, p2 = constraint['params']
+                v1, v2 = state['vals'].get(p1), state['vals'].get(p2)
+                if v1 == '_____' and v2 == '_____':
+                    skip_state = True
+                    break
+
             elif constraint['type'] == 'NOT_NULL':
                 p = constraint['params'][0]
                 p_type = param_name_to_type[p]
@@ -694,26 +701,6 @@ def main(args):
                 print('did not get any =(')
             if num_instantiated >= args.templates_per_image:
                 break
-
-    # Change "side_inputs" to "value_inputs" in all functions of all functional
-    # programs. My original name for these was "side_inputs" but I decided to
-    # change the name to "value_inputs" for the public CLEVR release. I should
-    # probably go through all question generation code and templates and rename,
-    # but that could be tricky and take a while, so instead I'll just do it here.
-    # To further complicate things, originally functions without value inputs did
-    # not have a "side_inputs" field at all, and I'm pretty sure this fact is used
-    # in some of the code above; however in the public CLEVR release all functions
-    # have a "value_inputs" field, and it's an empty list for functions that take
-    # no value inputs. Again this should probably be refactored, but the quick and
-    # dirty solution is to keep the code above as-is, but here make "value_inputs"
-    # an empty list for those functions that do not have "side_inputs". Gross.
-    for q in questions:
-        for f in q['program']:
-            if 'side_inputs' in f:
-                f['value_inputs'] = f['side_inputs']
-                del f['side_inputs']
-            else:
-                f['value_inputs'] = []
 
     with open(args.output_questions_file, 'w') as f:
         print('Writing output to %s' % args.output_questions_file)

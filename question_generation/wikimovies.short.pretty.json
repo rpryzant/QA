@@ -1,0 +1,985 @@
+{
+    "dbs": [
+        {
+            "films": [
+                {
+                    "directed_by": [
+                        "William Dieterle"
+                    ],
+                    "has_tags": [
+                        "bd-r"
+                    ],
+                    "in_language": [
+                        "English"
+                    ],
+                    "release_year": [
+                        1944
+                    ],
+                    "starred_actors": [
+                        "Marlene Dietrich",
+                        "Edward Arnold",
+                        "Ronald Colman",
+                        "James Craig"
+                    ],
+                    "title": [
+                        "Kismet"
+                    ],
+                    "written_by": [
+                        "Edward Knoblock"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Clint Eastwood"
+                    ],
+                    "has_genre": [
+                        "War"
+                    ],
+                    "has_imdb_votes": [
+                        "famous"
+                    ],
+                    "has_tags": [
+                        "world war ii",
+                        "war",
+                        "r",
+                        "clint eastwood",
+                        "american",
+                        "iwo jima",
+                        "flag"
+                    ],
+                    "release_year": [
+                        2006
+                    ],
+                    "title": [
+                        "Flags of Our Fathers"
+                    ],
+                    "written_by": [
+                        "Paul Haggis",
+                        "Ron Powers",
+                        "James Bradley"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Fran\u00e7ois Truffaut"
+                    ],
+                    "has_tags": [
+                        "bd-r",
+                        "revenge",
+                        "wedding",
+                        "fran\u00e7ois truffaut",
+                        "black",
+                        "bride"
+                    ],
+                    "in_language": [
+                        "French"
+                    ],
+                    "release_year": [
+                        1968
+                    ],
+                    "starred_actors": [
+                        "Jeanne Moreau",
+                        "Michel Bouquet",
+                        "Charles Denner"
+                    ],
+                    "title": [
+                        "The Bride Wore Black"
+                    ],
+                    "written_by": [
+                        "Cornell Woolrich",
+                        "Fran\u00e7ois Truffaut"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Adrian Shergold"
+                    ],
+                    "has_genre": [
+                        "Drama"
+                    ],
+                    "release_year": [
+                        2004
+                    ],
+                    "starred_actors": [
+                        "Michael Sheen",
+                        "Claudie Blakley",
+                        "Anastasia Griffith",
+                        "Adrian Bower"
+                    ],
+                    "title": [
+                        "Dirty Filthy Love"
+                    ],
+                    "written_by": [
+                        "Jeff Pope"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Alfred E. Green"
+                    ],
+                    "has_genre": [
+                        "Comedy"
+                    ],
+                    "has_tags": [
+                        "alfred e. green"
+                    ],
+                    "release_year": [
+                        1932
+                    ],
+                    "starred_actors": [
+                        "Bette Davis",
+                        "Warren William"
+                    ],
+                    "title": [
+                        "The Dark Horse"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Clark Johnson"
+                    ],
+                    "has_genre": [
+                        "Thriller",
+                        "Crime"
+                    ],
+                    "has_tags": [
+                        "thriller",
+                        "crime",
+                        "michael douglas",
+                        "secret service"
+                    ],
+                    "release_year": [
+                        2006
+                    ],
+                    "starred_actors": [
+                        "Michael Douglas",
+                        "Kiefer Sutherland",
+                        "Eva Longoria"
+                    ],
+                    "title": [
+                        "The Sentinel"
+                    ],
+                    "written_by": [
+                        "Gerald Petievich"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Leonard Nimoy"
+                    ],
+                    "has_genre": [
+                        "Comedy"
+                    ],
+                    "release_year": [
+                        1990
+                    ],
+                    "starred_actors": [
+                        "Gene Wilder"
+                    ],
+                    "title": [
+                        "Funny About Love"
+                    ],
+                    "written_by": [
+                        "Norman Steinberg",
+                        "David Frankel",
+                        "Bob Greene"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Lynne Stopkewich"
+                    ],
+                    "has_tags": [
+                        "necrophilia"
+                    ],
+                    "release_year": [
+                        1996
+                    ],
+                    "starred_actors": [
+                        "Molly Parker",
+                        "Peter Outerbridge"
+                    ],
+                    "title": [
+                        "Kissed"
+                    ],
+                    "written_by": [
+                        "Barbara Gowdy",
+                        "Lynne Stopkewich"
+                    ]
+                },
+                {
+                    "has_genre": [
+                        "Action"
+                    ],
+                    "has_tags": [
+                        "japan",
+                        "prison"
+                    ],
+                    "in_language": [
+                        "Japanese"
+                    ],
+                    "release_year": [
+                        2002
+                    ],
+                    "starred_actors": [
+                        "Hideo Sakaki"
+                    ],
+                    "title": [
+                        "Alive"
+                    ],
+                    "written_by": [
+                        "Tsutomu Takahashi"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "David Wu"
+                    ],
+                    "release_year": [
+                        2002
+                    ],
+                    "starred_actors": [
+                        "Bridget Fonda",
+                        "Chelsea Hobbs"
+                    ],
+                    "title": [
+                        "Snow Queen"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Andrew Dominik"
+                    ],
+                    "has_tags": [
+                        "australia",
+                        "australian",
+                        "eric bana",
+                        "andrew dominik"
+                    ],
+                    "release_year": [
+                        2000
+                    ],
+                    "starred_actors": [
+                        "Eric Bana",
+                        "David Field",
+                        "Simon Lyndon"
+                    ],
+                    "title": [
+                        "Chopper"
+                    ],
+                    "written_by": [
+                        "Andrew Dominik"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Paul Mayeda Berges"
+                    ],
+                    "release_year": [
+                        2005
+                    ],
+                    "title": [
+                        "The Mistress of Spices"
+                    ],
+                    "written_by": [
+                        "Gurinder Chadha",
+                        "Paul Mayeda Berges",
+                        "Chitra Banerjee Divakaruni"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Brian Levant"
+                    ],
+                    "has_genre": [
+                        "Comedy"
+                    ],
+                    "has_tags": [
+                        "brian levant"
+                    ],
+                    "release_year": [
+                        2002
+                    ],
+                    "starred_actors": [
+                        "James Coburn"
+                    ],
+                    "title": [
+                        "Snow Dogs"
+                    ],
+                    "written_by": [
+                        "Gary Paulsen"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Steve Miner"
+                    ],
+                    "has_genre": [
+                        "Comedy",
+                        "Horror"
+                    ],
+                    "release_year": [
+                        1986
+                    ],
+                    "starred_actors": [
+                        "William Katt",
+                        "George Wendt",
+                        "Kay Lenz",
+                        "Richard Moll"
+                    ],
+                    "title": [
+                        "House"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Akira Kurosawa"
+                    ],
+                    "has_tags": [
+                        "akira kurosawa",
+                        "toshiro mifune",
+                        "kurosawa",
+                        "princess"
+                    ],
+                    "release_year": [
+                        1958
+                    ],
+                    "title": [
+                        "The Hidden Fortress"
+                    ],
+                    "written_by": [
+                        "Akira Kurosawa"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Robert Wise"
+                    ],
+                    "has_tags": [
+                        "murder",
+                        "robert wise"
+                    ],
+                    "release_year": [
+                        1958
+                    ],
+                    "starred_actors": [
+                        "Susan Hayward",
+                        "Theodore Bikel",
+                        "Simon Oakland"
+                    ],
+                    "title": [
+                        "I Want to Live!"
+                    ],
+                    "written_by": [
+                        "Nelson Gidding",
+                        "Don Mankiewicz",
+                        "Barbara Graham",
+                        "Ed Montgomery"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Tay Garnett"
+                    ],
+                    "has_genre": [
+                        "Drama"
+                    ],
+                    "has_tags": [
+                        "tay garnett"
+                    ],
+                    "release_year": [
+                        1944
+                    ],
+                    "starred_actors": [
+                        "Walter Pidgeon",
+                        "Greer Garson"
+                    ],
+                    "title": [
+                        "Mrs. Parkington"
+                    ],
+                    "written_by": [
+                        "Robert Thoeren",
+                        "Louis Bromfield",
+                        "Polly James"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "George Waggner"
+                    ],
+                    "has_genre": [
+                        "Drama",
+                        "Horror"
+                    ],
+                    "has_tags": [
+                        "werewolf"
+                    ],
+                    "release_year": [
+                        1941
+                    ],
+                    "starred_actors": [
+                        "Claude Rains",
+                        "Ralph Bellamy"
+                    ],
+                    "title": [
+                        "The Wolf Man"
+                    ],
+                    "written_by": [
+                        "Curt Siodmak"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Eldar Ryazanov"
+                    ],
+                    "has_genre": [
+                        "Drama",
+                        "Romance"
+                    ],
+                    "has_tags": [
+                        "russian"
+                    ],
+                    "in_language": [
+                        "Russian"
+                    ],
+                    "release_year": [
+                        1984
+                    ],
+                    "title": [
+                        "A Cruel Romance"
+                    ],
+                    "written_by": [
+                        "Eldar Ryazanov"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Brandon Camp"
+                    ],
+                    "has_genre": [
+                        "Drama",
+                        "Romance"
+                    ],
+                    "has_tags": [
+                        "jennifer aniston"
+                    ],
+                    "release_year": [
+                        2009
+                    ],
+                    "starred_actors": [
+                        "Aaron Eckhart",
+                        "Jennifer Aniston"
+                    ],
+                    "title": [
+                        "Love Happens"
+                    ],
+                    "written_by": [
+                        "Brandon Camp"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Hilary Brougher"
+                    ],
+                    "has_genre": [
+                        "Horror"
+                    ],
+                    "starred_actors": [
+                        "Kelly Reilly",
+                        "Linus Roache",
+                        "Graham Phillips",
+                        "Sophie Curtis"
+                    ],
+                    "title": [
+                        "Innocence"
+                    ],
+                    "written_by": [
+                        "Hilary Brougher",
+                        "Tristine Skyler",
+                        "Jane Mendelsohn"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Milcho Manchevski"
+                    ],
+                    "has_genre": [
+                        "War"
+                    ],
+                    "in_language": [
+                        "Macedonian"
+                    ],
+                    "release_year": [
+                        1994
+                    ],
+                    "starred_actors": [
+                        "Katrin Cartlidge",
+                        "Gr\u00e9goire Colin",
+                        "Labina Mitevska"
+                    ],
+                    "title": [
+                        "Before the Rain"
+                    ],
+                    "written_by": [
+                        "Milcho Manchevski"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Mel Smith"
+                    ],
+                    "has_genre": [
+                        "Comedy"
+                    ],
+                    "has_tags": [
+                        "george lucas",
+                        "radio"
+                    ],
+                    "release_year": [
+                        1994
+                    ],
+                    "starred_actors": [
+                        "Ned Beatty",
+                        "Mary Stuart Masterson",
+                        "George Burns",
+                        "Brian Benben"
+                    ],
+                    "title": [
+                        "Radioland Murders"
+                    ],
+                    "written_by": [
+                        "George Lucas",
+                        "Willard Huyck",
+                        "Gloria Katz"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Douglas Sirk"
+                    ],
+                    "release_year": [
+                        1948
+                    ],
+                    "starred_actors": [
+                        "Robert Cummings",
+                        "Don Ameche",
+                        "Claudette Colbert"
+                    ],
+                    "title": [
+                        "Sleep, My Love"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Joel Schumacher"
+                    ],
+                    "has_genre": [
+                        "Comedy"
+                    ],
+                    "release_year": [
+                        1989
+                    ],
+                    "starred_actors": [
+                        "Sean Young",
+                        "Isabella Rossellini",
+                        "Ted Danson",
+                        "William Petersen"
+                    ],
+                    "title": [
+                        "Cousins"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Claire Denis"
+                    ],
+                    "has_genre": [
+                        "Drama"
+                    ],
+                    "in_language": [
+                        "French"
+                    ],
+                    "release_year": [
+                        1994
+                    ],
+                    "title": [
+                        "I Can't Sleep"
+                    ],
+                    "written_by": [
+                        "Claire Denis"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Brad Silberling"
+                    ],
+                    "has_genre": [
+                        "Drama"
+                    ],
+                    "has_imdb_rating": [
+                        "good"
+                    ],
+                    "release_year": [
+                        2002
+                    ],
+                    "title": [
+                        "Moonlight Mile"
+                    ],
+                    "written_by": [
+                        "Brad Silberling"
+                    ]
+                },
+                {
+                    "starred_actors": [
+                        "Cynthia Rothrock"
+                    ],
+                    "title": [
+                        "China O'Brien"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Daniel Auteuil"
+                    ],
+                    "has_genre": [
+                        "Drama"
+                    ],
+                    "in_language": [
+                        "French"
+                    ],
+                    "release_year": [
+                        2011
+                    ],
+                    "starred_actors": [
+                        "Daniel Auteuil",
+                        "Kad Merad",
+                        "Sabine Az\u00e9ma"
+                    ],
+                    "title": [
+                        "The Well-Digger's Daughter"
+                    ],
+                    "written_by": [
+                        "Marcel Pagnol",
+                        "Daniel Auteuil"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "John V. Knowles"
+                    ],
+                    "has_genre": [
+                        "Comedy",
+                        "Horror"
+                    ],
+                    "release_year": [
+                        2013
+                    ],
+                    "title": [
+                        "Chastity Bites"
+                    ],
+                    "written_by": [
+                        "Lotti Pharriss Knowles"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Ang Lee"
+                    ],
+                    "has_genre": [
+                        "Drama"
+                    ],
+                    "has_tags": [
+                        "funny",
+                        "criterion",
+                        "drama",
+                        "dvd",
+                        "1970s",
+                        "sigourney weaver",
+                        "moody",
+                        "elijah wood",
+                        "tobey maguire",
+                        "christina ricci",
+                        "ang lee",
+                        "thanksgiving"
+                    ],
+                    "release_year": [
+                        1997
+                    ],
+                    "starred_actors": [
+                        "Sigourney Weaver",
+                        "Kevin Kline",
+                        "Joan Allen"
+                    ],
+                    "title": [
+                        "The Ice Storm"
+                    ],
+                    "written_by": [
+                        "Rick Moody"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Akira Kurosawa"
+                    ],
+                    "has_tags": [
+                        "japan",
+                        "akira kurosawa"
+                    ],
+                    "in_language": [
+                        "Japanese"
+                    ],
+                    "release_year": [
+                        1965
+                    ],
+                    "title": [
+                        "Red Beard"
+                    ],
+                    "written_by": [
+                        "Akira Kurosawa"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Joseph H. Lewis"
+                    ],
+                    "has_genre": [
+                        "Drama",
+                        "Adventure"
+                    ],
+                    "release_year": [
+                        1952
+                    ],
+                    "starred_actors": [
+                        "Keenan Wynn",
+                        "Howard Keel",
+                        "Jane Greer",
+                        "Patricia Medina"
+                    ],
+                    "title": [
+                        "Desperate Search"
+                    ],
+                    "written_by": [
+                        "Arthur Mayse"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Joseph Castelo"
+                    ],
+                    "has_genre": [
+                        "Drama"
+                    ],
+                    "release_year": [
+                        2005
+                    ],
+                    "starred_actors": [
+                        "Sarita Choudhury",
+                        "Nandana Sen",
+                        "Firdous Bamji",
+                        "Ayad Akhtar"
+                    ],
+                    "title": [
+                        "The War Within"
+                    ],
+                    "written_by": [
+                        "Joseph Castelo",
+                        "Tom Glynn",
+                        "Ayad Akhtar"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Jeff Fisher"
+                    ],
+                    "has_genre": [
+                        "Comedy",
+                        "Horror"
+                    ],
+                    "release_year": [
+                        2008
+                    ],
+                    "starred_actors": [
+                        "Paul Wesley",
+                        "Torrey DeVitto"
+                    ],
+                    "title": [
+                        "Killer Movie"
+                    ],
+                    "written_by": [
+                        "Jeff Fisher"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Stephen Herek"
+                    ],
+                    "has_genre": [
+                        "Comedy"
+                    ],
+                    "has_tags": [
+                        "sports",
+                        "emilio estevez",
+                        "stephen herek"
+                    ],
+                    "release_year": [
+                        1992
+                    ],
+                    "starred_actors": [
+                        "Emilio Estevez"
+                    ],
+                    "title": [
+                        "The Mighty Ducks"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Rauni Mollberg"
+                    ],
+                    "has_genre": [
+                        "War"
+                    ],
+                    "has_tags": [
+                        "remake"
+                    ],
+                    "in_language": [
+                        "Finnish"
+                    ],
+                    "release_year": [
+                        1985
+                    ],
+                    "title": [
+                        "The Unknown Soldier"
+                    ],
+                    "written_by": [
+                        "V\u00e4in\u00f6 Linna",
+                        "Rauni Mollberg"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Pascal Laugier"
+                    ],
+                    "has_genre": [
+                        "Horror"
+                    ],
+                    "has_tags": [
+                        "horror",
+                        "french",
+                        "new french extremity"
+                    ],
+                    "in_language": [
+                        "French"
+                    ],
+                    "release_year": [
+                        2008
+                    ],
+                    "title": [
+                        "Martyrs"
+                    ],
+                    "written_by": [
+                        "Pascal Laugier"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Ron Underwood"
+                    ],
+                    "has_genre": [
+                        "Family"
+                    ],
+                    "has_tags": [
+                        "charlize theron",
+                        "bill paxton",
+                        "ron underwood"
+                    ],
+                    "release_year": [
+                        1998
+                    ],
+                    "starred_actors": [
+                        "Charlize Theron",
+                        "Bill Paxton"
+                    ],
+                    "title": [
+                        "Mighty Joe Young"
+                    ],
+                    "written_by": [
+                        "Merian C. Cooper",
+                        "Ruth Rose"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Roy Del Ruth"
+                    ],
+                    "has_genre": [
+                        "Musical"
+                    ],
+                    "release_year": [
+                        1951
+                    ],
+                    "starred_actors": [
+                        "Doris Day",
+                        "Virginia Mayo",
+                        "Gordon MacRae",
+                        "Gene Nelson"
+                    ],
+                    "title": [
+                        "Starlift"
+                    ],
+                    "written_by": [
+                        "John D. Klorer"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "Gareth Evans"
+                    ],
+                    "has_genre": [
+                        "Action",
+                        "Crime"
+                    ],
+                    "has_tags": [
+                        "action",
+                        "martial arts",
+                        "indonesia",
+                        "gareth evans",
+                        "iko uwais"
+                    ],
+                    "in_language": [
+                        "English",
+                        "Japanese",
+                        "Indonesian"
+                    ],
+                    "release_year": [
+                        2014
+                    ],
+                    "starred_actors": [
+                        "Iko Uwais",
+                        "Oka Antara",
+                        "Arifin Putra"
+                    ],
+                    "title": [
+                        "The Raid 2"
+                    ],
+                    "written_by": [
+                        "Gareth Evans"
+                    ]
+                },
+                {
+                    "directed_by": [
+                        "John Blanchard"
+                    ],
+                    "has_genre": [
+                        "Horror"
+                    ],
+                    "release_year": [
+                        2000
+                    ],
+                    "title": [
+                        "Shriek If You Know What I Did Last Friday the Thirteenth"
+                    ]
+                }
+            ]
+        }
+    ]
+}

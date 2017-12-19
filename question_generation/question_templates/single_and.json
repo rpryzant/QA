@@ -1,0 +1,47 @@
+[
+    {
+        "text": [
+            "How many movies are <V> and <R>?"
+        ],
+        "nodes": [
+            {
+                "inputs": [],
+                "type": "db"
+            },
+            {
+                "side_inputs": ["<V>"],
+                "inputs": [0],
+                "type": "filter_has_imdb_votes"
+            },
+            {
+                "inputs": [],
+                "type": "db"
+            },
+            {
+                "side_inputs": ["<R>"],
+                "inputs": [2],
+                "type": "filter_has_imdb_rating"
+            },
+            {
+                "inputs": [1, 3],
+                "type": "intersect"
+            },
+            {
+                    "inputs": [4],
+                    "type": "count"
+            }
+        ],
+        "constraints": [
+        ],
+        "params": [
+            {
+                "type": "has_imdb_votes",
+                "name": "<V>"
+            },
+            {
+                "type": "has_imdb_rating",
+                "name": "<R>"
+            }
+        ]
+    } 
+]
