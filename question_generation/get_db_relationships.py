@@ -43,7 +43,7 @@ ordered_attrs = [
 
 # get a comparable attribute value from a movie
 def get_val(attr, mov):
-    assert attr in mov
+    if attr not in mov: return None
 
     raw_val = mov[attr]
 
@@ -74,16 +74,18 @@ for attr in binary_attrs + ordered_attrs:
 
         for j, movj in enumerate(data['dbs'][0]['films']):
             if i == j: continue
-            if not attr in movj: continue
 
             j_val = get_val(attr, movj)
 
             if attr in binary_attrs:
-                if len(set(i_val) & set(j_val)) > 0:
+                # movie i and j are "different" if j lacks the selected attribute
+                if j_val is not None and len(set(i_val) & set(j_val)) > 0:
                     relationships['same_%s' % attr][-1].append(j)
                 else:
                     relationships['different_%s' % attr][-1].append(j)
             else:
+                if not attr in movj: continue
+
                 if j_val == i_val: 
                     relationships['same_%s' % attr][-1].append(j)
                 elif j_val > i_val:

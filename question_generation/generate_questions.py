@@ -176,6 +176,9 @@ def add_empty_filter_options(attribute_map, metadata, num_to_add):
 
 def find_relate_filter_options(object_idx, scene_struct, metadata,
         unique=False, include_zero=False, trivial_frac=0.1):
+    assert len(object_idx) == 1
+    object_idx = object_idx[0]
+
     options = {}
     if '_filter_options' not in scene_struct:
         precompute_filter_options(scene_struct, metadata)
@@ -386,13 +389,14 @@ def instantiate_templates_dfs(scene_struct, template, metadata, answer_counts,
         special_nodes = {
                 'filter_unique', 'filter_count', 'filter_exist', 'filter',
                 'relate_filter', 'relate_filter_unique', 'relate_filter_count',
-                'relate_filter_exist',
+                'relate_filter_exist', 'relate'
         }
         if next_node['type'] in special_nodes:
-            if next_node['type'].startswith('relate_filter'):
-                unique = (next_node['type'] == 'relate_filter_unique')
-                include_zero = (next_node['type'] == 'relate_filter_count'
-                                                or next_node['type'] == 'relate_filter_exist')
+            if 'relate' in next_node['type']:
+                # TODO figure this out
+                unique = False # (next_node['type'] == 'relate_filter_unique')
+                include_zero = False # = (next_node['type'] == 'relate_filter_count'
+                #                                 or next_node['type'] == 'relate_filter_exist')
                 filter_options = find_relate_filter_options(answer, scene_struct, metadata,
                                                         unique=unique, include_zero=include_zero)
             else:
@@ -644,6 +648,7 @@ def main(args):
 
     questions = []
     scene_count = 0
+    # TODO possibly different scenes for films/actors/etc?
     for i, scene in enumerate(all_scenes):
         # scene_fn = scene['image_filename']
         scene_struct = scene

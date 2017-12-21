@@ -62,9 +62,13 @@ def vg_relate_handler(scene_struct, inputs, side_inputs):
 
 
 def relate_handler(scene_struct, inputs, side_inputs):
+    # TODO -- figure out why this is nested
+    inputs = inputs[0]
+
     assert len(inputs) == 1
     assert len(side_inputs) == 1
     relation = side_inputs[0]
+
     return scene_struct['relationships'][relation][inputs[0]]
         
 
@@ -165,7 +169,7 @@ execute_handlers = {
     'filter_title': make_filter_handler('title'),
 
     'unique': unique_handler,
-#  'relate': relate_handler,   -- TODO -- preload json with relations
+    'relate': relate_handler,
 
     'union': union_handler,
     'intersect': intersect_handler,
@@ -260,7 +264,7 @@ def insert_scene_node(nodes, idx):
         new_nodes.append(new_node)
 
     # Replace the specified index with a scene node
-    new_nodes[idx] = {'type': 'scene', 'inputs': []}
+    new_nodes[idx] = {'type': 'db', 'inputs': []}
 
     # Search backwards from the last node to see which nodes are actually used
     output_used = [False] * len(new_nodes)

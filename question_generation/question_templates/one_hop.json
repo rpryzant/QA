@@ -1,0 +1,39 @@
+[
+    {
+        "text": [
+            "What number of movies are <R> <T>?"
+        ],
+        "nodes": [
+            {
+                "inputs": [],
+                "type": "db"
+            },
+            {
+                "side_inputs": ["<T>"],
+                "inputs": [0],
+                "type": "filter_title"
+            },
+            {
+                "side_inputs": ["<R>"],
+                "inputs": [1],
+                "type": "relate"
+            },
+            {
+                "inputs": [2],
+                "type": "count"
+            }
+        ],
+        "constraints": [
+        ],
+        "params": [
+            {
+                "type": "title",
+                "name": "<T>"
+            },
+            {
+                "type": "Relation",
+                "name": "<R>"
+            }
+        ]
+    } 
+]
