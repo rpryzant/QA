@@ -79,7 +79,7 @@ parser.add_argument('--num_scenes', default=0, type=int,
 parser.add_argument('--templates_per_image', default=50, type=int,
         help="The number of different templates that should be instantiated " +
                  "on each image")
-parser.add_argument('--instances_per_template', default=50, type=int,
+parser.add_argument('--instances_per_template', default=3, type=int,
         help="The number of times each template should be instantiated on an image")
 
 # Misc

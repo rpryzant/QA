@@ -1,3 +1,8 @@
+"""
+pulls out metadata 'type' information 
+from wikimovies json file
+"""
+
 import json
 import sys
 
@@ -25,6 +30,12 @@ print """
         "starred_actors": %s,
         "written_by": %s,
         "directed_by": %s
+        "relation": ["same_directed_by", "different_directed_by", 
+                     "same_starred_actors, "different_starred_actors",
+                     "same_written_by", "different_written_by",
+                     "bigger_has_imdb_votes", "same_has_imdb_votes", "smaller_has_imdb_votes",
+                     "bigger_has_imdb_rating", "same_has_imdb_rating", "smaller_has_imdb_votes",
+                     "bigger_release_year", "same_release_year", "smaller_release_year"]
 """ % (
     fields_for_attr("title"),
     fields_for_attr("release_year"),
