@@ -1,4 +1,6 @@
 TODO
+summarize current state
+
 
 - speedup
 - randomize order
