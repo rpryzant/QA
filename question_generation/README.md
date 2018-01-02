@@ -2,26 +2,29 @@
 
 Generates questions from wikimovies
 
-#### Usage
-
-Run `python generate_questions.py`, which will dump output into `questions.json`. 
-
-`generate_questions.py` takes two input files:
-
-1. an _input scene file_ which contains a structured db. You can prepare the raw wikimovies kb with `ingest_wikimovies.py` (see file for usage).
-2. a _metadata file_, which lists the various 
-
-TODO finish
-
-
-Ingest raw wikimovie data into a CLEVR-style "scene"
+#### Generate wikimovies DB
 
 ```
-python ingest_wikimovies.py [raw wikimovies kb] [output destination] 
+python ingest_wikimovies.py [raw wikimovies kb] wikimovies.json
+python get_db_relationships.py wikimovies.json > relationships
+# copy-paste `relationships` into end of wikimovies.json
+```
+
+TODO -- ingest and get relationships in one step
+
+
+#### Generate types for metadata file
+
+```
+python get_metadata_types.py wikimovies.json
 ```
 
 
+#### Generate questions
 
+```
+python generate_questions.py
+```
 
 
 TODO
