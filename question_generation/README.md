@@ -2,7 +2,7 @@
 
 Generates questions from wikimovies
 
-### make wikimovies DB
+### make wikimovies json DB
 
 ```
 python ingest_wikimovies.py [raw wikimovies kb] wikimovies.json
@@ -13,10 +13,11 @@ python get_db_relationships.py wikimovies.json > relationships
 TODO -- ingest and get relationships in one step
 
 
-### make metadata file
+### get variable types
 
 ```
 python get_metadata_types.py wikimovies.json
+# copy-paste these ouputs into metadata.json
 ```
 
 
@@ -27,12 +28,13 @@ python generate_questions.py
 ```
 
 
-TODO
-summarize current state
-
+## TODOs
 
 - speedup
 - randomize order
-- relations
-- actor/director/writer/year centric questions? (i think this is done)
-
+- relations with multiple hops
+- actor/director/writer/year (i.e. non-movie) centric questions? (this might be done)
+- handling missing question fields
+- synonyms
+- what to do with multiple-value attributes 
+- make "year" an int instead of its own datatype?
