@@ -2,7 +2,7 @@
 
 Generates questions from wikimovies
 
-### Generate wikimovies DB
+### make wikimovies DB
 
 ```
 python ingest_wikimovies.py [raw wikimovies kb] wikimovies.json
@@ -13,7 +13,7 @@ python get_db_relationships.py wikimovies.json > relationships
 TODO -- ingest and get relationships in one step
 
 
-### Generate types for metadata file
+### make metadata file
 
 ```
 python get_metadata_types.py wikimovies.json
