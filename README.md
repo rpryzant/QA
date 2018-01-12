@@ -39,7 +39,6 @@
 
 ## find short stories + generate questions
 **Pros**
-* dense graphs
 * encoding is easy (not as much of an IR focus)
 * would make a _big_ splash ("ai solves gre!")
 
