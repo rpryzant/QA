@@ -1,4 +1,4 @@
-# QA Ideas
+# MAC Ideas
 
 ## WikiMovies KB + generated questions
 **Pros**
