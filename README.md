@@ -34,7 +34,7 @@
 
 **Cons**
 * encoding a subset of the KB as a graph for traversal/generation would take significant effort
-* scaling to massive kb's requires significant algorithmic innovation, might detract from _reasoning_
+* IR-heavy: scaling to massive kb's requires significant algorithmic innovation, might detract from _reasoning_
 
 
 ## SAT solver: find short stories + generate questions
