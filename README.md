@@ -1,8 +1,6 @@
-# QA
+# QA Ideas
 
-## IDEAS
-
-### WikiMovies KB + generated questions
+## WikiMovies KB + generated questions
 **Pros**
 * some initial progress
 * semantically interesting topic (people like movies)
@@ -10,7 +8,7 @@
 **Cons**
 * Graph sparsity
 
-### Ice's dataset ([paper](https://nlp.stanford.edu/software/sempre/wikitable/))
+## Ice's dataset ([paper](https://nlp.stanford.edu/software/sempre/wikitable/))
 **Pros**
 * the data is there
 
@@ -19,7 +17,7 @@
 * IR-heavy task where simple algos can do very well
 * small splash
 
-### WebQueryTable + (turk/generated) questions ([paper](https://arxiv.org/pdf/1706.02427.pdf))
+## WebQueryTable + (turk/generated) questions ([paper](https://arxiv.org/pdf/1706.02427.pdf))
 **Pros**
 * 200k tables to generate questions from
 
@@ -28,7 +26,7 @@
 * many tables may not be interesting
 * small splash
 
-### Large open DB + generated questions (wikitable/dbpedia)
+## Large open DB + generated questions (wikitable/dbpedia)
 **Pros**
 * dense graph
 * open domain
@@ -39,7 +37,7 @@
 * scaling to massive kb's requires significant algorithmic innovation, might detract from _reasoning_
 
 
-### SAT solver: find short stories + generate questions
+## SAT solver: find short stories + generate questions
 **Pros**
 * dense graphs
 * encoding is easy (not as much of an IR focus)
