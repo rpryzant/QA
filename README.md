@@ -33,7 +33,7 @@
 * would make a _big_ splash
 
 **Cons**
-* ingesting the KB would be hard and take time
+* encoding a subset of the KB as a graph for traversal/generation would take significant effort
 * scaling to massive kb's requires significant algorithmic innovation, might detract from _reasoning_
 
 
