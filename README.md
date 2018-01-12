@@ -41,6 +41,7 @@
 **Pros**
 * encoding is easy (not as much of an IR focus)
 * would make a _big_ splash ("ai solves gre!")
+* encoding text is more fun than encoding graphs/KBs (nlp ftw!!)
 
 **Cons**
 * where to get stories? reddit? generate them? have turkers write them? use other short story datasets?
