@@ -44,6 +44,6 @@
 * would make a _big_ splash ("ai solves gre!")
 
 **Cons**
-* where to get stories? reddit? generate them? have turkers write them?
+* where to get stories? reddit? generate them? have turkers write them? use other short story datasets?
 * how to get questions? generated from kb? turkers (how to encourage compositionality)? 
 
