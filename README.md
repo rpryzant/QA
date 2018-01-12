@@ -45,5 +45,5 @@
 
 **Cons**
 * where to get stories? reddit? generate them? have turkers write them? use other short story datasets?
-* how to get questions? generated from kb? turkers (how to encourage compositionality)? 
+* how to get questions? extract graph from story? turkers (how to encourage compositionality)? 
 
