@@ -37,7 +37,7 @@
 * IR-heavy: scaling to massive kb's requires significant algorithmic innovation, might detract from _reasoning_
 
 
-## SAT solver: find short stories + generate questions
+## find short stories + generate questions
 **Pros**
 * dense graphs
 * encoding is easy (not as much of an IR focus)
