@@ -17,7 +17,7 @@
 * IR-heavy task where simple algos can do very well
 * small splash
 
-## WebQueryTable + (turk/generated) questions ([paper](https://arxiv.org/pdf/1706.02427.pdf))
+## WebQueryTable + [turk/generated] questions ([paper](https://arxiv.org/pdf/1706.02427.pdf))
 **Pros**
 * 200k tables to generate questions from
 
