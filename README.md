@@ -47,3 +47,16 @@
 * where to get stories? reddit? generate them? have turkers write them? use other short story datasets?
 * how to get questions? extract graph from story? turkers (how to encourage compositionality)? 
 
+## Discovery
+1. you start from squad paragraph, or roc stories, or a photo (we can try out several options).
+2. you extract a small structured representation out of that. (graph) - using corenlp tools.
+3. two options: a. somehow (not sure how yet) you prime the turkers to ask compositional questions, b. you use the small graph to create auto-generated compositional questions, as we planned to do with wikimovies
+
+**Pros**
+* lots of small graphs
+
+**Cons**
+* lots of unknowns: what works best? 
+* predicted graphs
+* how to prime turkers for compositionality 
+
